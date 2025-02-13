@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow: hidden;
+}
+.main {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-image: url(pics/background.png);
+  background-size: auto;
+  align-items: center;
+  justify-content: center;
+}
+body::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1;
+}
+#right {
+  position: absolute;
+  width: 1200px;
+  z-index: 10;
+  bottom: -135px;
+  rotate: -28deg;
+  right: -361px;
+  animation: float 3s ease-in-out infinite;
+}
+#left {
+  width: 1000px;
+  position: absolute;
+  z-index: 10;
+  bottom: -75px;
+  left: -295px;
+  rotate: 17deg;
+  animation: float 3s ease-in-out infinite;
+}
+#line1 {
+  position: absolute;
+  right: -80rem;
+  background: #222222a2;
+  width: 2000px;
+  height: 40%;
+  z-index: 5;
+  backdrop-filter: blur(20px);
+  rotate: 45deg;
+  box-shadow: 0 0 120px 5px black;
+}
+#line2 {
+  position: absolute;
+  right: -33rem;
+  background: #222222a2;
+  width: 2000px;
+  height: 40%;
+  z-index: 5;
+  backdrop-filter: blur(20px);
+  rotate: 45deg;
+  box-shadow: 0 0 120px 5px black;
+}
+#line3 {
+  position: absolute;
+  right: 9rem;
+  background: #222222a2;
+  width: 2000px;
+  height: 40%;
+  z-index: 5;
+  backdrop-filter: blur(20px);
+  rotate: 45deg;
+  box-shadow: 0 0 120px 5px black;
+}
+#line4 {
+  position: absolute;
+  right: 780px;
+  background: #222222a2;
+  width: 2000px;
+  height: 40%;
+  z-index: 5;
+  backdrop-filter: blur(20px);
+  rotate: 45deg;
+  box-shadow: 0 0 120px 5px black;
+}
+.middle {
+  display: grid;
+
+  align-items: center;
+  justify-items: center;
+}
+.tangiro {
+  position: absolute;
+  width: 480px; /* حجم الشخصية */
+
+  transform: translateX(-50%);
+  bottom: 180px; /* تحديد ارتفاع الشخصية فوق الصخرة */
+  z-index: 12;
+  transition: transform 0.3s ease;
+
+  animation: float 3s ease-in-out infinite;
+}
+.fly {
+  position: absolute;
+  width: 550px;
+  bottom: -85px;
+  z-index: 11;
+  transform: 1s;
+  animation: float 3s ease-in-out infinite;
+}
+.tangiro:hover {
+  transform: scale(1.2);
+}
+.nointeract {
+  pointer-events: none; /* يمنع أي تفاعل مع الصورة */
+  -webkit-user-drag: none; /* يمنع السحب في كروم وسفاري */
+  user-select: none; /* يمنع تحديد الصورة مثل النص */
+}
+.noact {
+  user-select: none; /* يمنع تحديد الشخصية مثل النص */
+  pointer-events: all; /* يتيح التفاعل مع الشخصية (انقر، hover) */
+}
+@keyframes float {
+  0% {
+    transform: translateY(0); /* بداية التحريك */
+  }
+  50% {
+    transform: translateY(-10px); /* التحرك لأعلى */
+  }
+  100% {
+    transform: translateY(0); /* العودة للأسفل */
+  }
+}
+.nav {
+  z-index: 50;
+  box-shadow: 0px 0px 20px 5px black;
+  backdrop-filter: blur(20px);
+  border-radius: 50px;
+  padding: 10px;
+  background: rgba(255, 255, 0, 0.11);
+  right: 10px;
+  top: 10px;
+  position: absolute;
+}
+.nav ul {
+  color: white;
+  margin: 0 10px;
+}
+.nav li {
+  color: white;
+  z-index: 50;
+  border-radius: 10px;
+  padding: 10px 5px;
+
+  display: inline;
+}
+.menu {
+  backdrop-filter: blur(100px);
+  z-index: 50;
+  display: flex;
+  justify-content: right;
+  position: absolute;
+  box-shadow: 0 0 2px 3px black;
+  right: 10px;
+  top: 10px;
+  border-radius: 40px;
+  padding: 0 20px;
+}
+.menu ul li {
+  color: white;
+  z-index: 50;
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 20px;
+}
+.menu ul li a {
+  z-index: 50;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  opacity: 80%;
+  margin: 0 5px;
+  position: relative;
+  transition: color 0.5s;
+}
+.menu ul li a:hover {
+  z-index: 50;
+  color: white;
+}
+
+.menu ul li a::before {
+  z-index: 50;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0px;
+  height: 3px;
+  width: 0%;
+  background-color: #acacac;
+  transition: all 0.5s;
+}
+
+.menu ul li a:hover::before {
+  z-index: 50;
+  width: 100%;
+}
